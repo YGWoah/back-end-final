@@ -84,7 +84,7 @@ const io = socketIo(server, {
 
 io.on('connection', ioRouter);
 
-server.listen(3001 || process.env.PORT, () => {
+server.listen(process.env.PORT || 3001, () => {
   console.log('the server is runing on port 3001 ');
 });
 
