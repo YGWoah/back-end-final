@@ -55,6 +55,13 @@ app.use(cookieParser());
 
 app.use(fileupload());
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    succes: true,
+    message: 'hello',
+  });
+});
+
 app.use('/api', api);
 
 app.use('/contact', contact);
