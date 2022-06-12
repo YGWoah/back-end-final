@@ -33,7 +33,7 @@ const options = {
   createDatabaseTable: true,
 };
 
-const sessionStore = new mysqlstore(options);
+//const sessionStore = new mysqlstore(options);
 
 const sessionConfig = {
   name: 'UranusSessionID',
@@ -49,7 +49,7 @@ const sessionConfig = {
 };
 
 app.use(express.urlencoded({ extended: true }));
-app.use(session(sessionConfig));
+//app.use(session(sessionConfig));
 
 app.use(cors(corsOptions));
 app.use(express.json());
