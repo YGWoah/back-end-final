@@ -6,8 +6,10 @@ const cookieParser = require('cookie-parser');
 const mysqlstore = require('express-mysql-session');
 const cors = require('cors');
 const session = require('express-session');
-const api = require('./api/api');
 const fileupload = require('express-fileupload');
+
+const api = require('./api/api');
+
 const contact = require('./api/contact');
 const { ioRouter } = require('./socket');
 const post = require('./api/post');
@@ -64,13 +66,13 @@ app.get('/', (req, res) => {
 
 app.use('/api', api);
 
-app.use('/contact', contact);
+//app.use('/contact', contact);
 
-app.use('/post', post);
+//app.use('/post', post);
 
-app.use('/class', Class);
+//app.use('/class', Class);
 
-app.use('/search', search);
+//app.use('/search', search);
 
 const server = http.createServer(app);
 
@@ -82,7 +84,7 @@ const io = socketIo(server, {
 
 io.on('connection', ioRouter);
 
-server.listen(3001, () => {
+server.listen(3001 || process.env.PORT, () => {
   console.log('the server is runing on port 3001 ');
 });
 
