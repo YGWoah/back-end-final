@@ -34,7 +34,7 @@ const options = {
 };
 
 //const sessionStore = new mysqlstore(options);
-
+/*
 const sessionConfig = {
   name: 'UranusSessionID',
   secret: 'UranusSessionIDHH',
@@ -47,7 +47,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: true,
 };
-
+*/
 app.use(express.urlencoded({ extended: true }));
 //app.use(session(sessionConfig));
 
